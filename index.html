@@ -11,7 +11,7 @@
     <main>
       <div id="left_side"></div>
 
-      <section id="frontOfCard">
+       <section id="frontOfCard">
         <img
           src="./images/bg-card-front.png"
           alt="card-front"
@@ -21,7 +21,7 @@
         <div id="frontOfCard_circle2"></div>
         <div id="frontofCard_number">0000 0000 0000 0000</div>
         <div id="frontofCard_name">Jane Appleseed</div>
-        <div id="frontofCard_date">00/00</div>
+        <div id="frontofCard_date"><span id='mm'>00</span>/<span id='yy'>00</span></div>
       </section>
 
       <div id="backSideOfCard">
@@ -31,10 +31,10 @@
           id="backSideOfCard_img"
         />
         <p id="backSideOfCard_cvc">1 2 3</p>
-      </div>
+      </div> 
 
       <section id="inputs">
-        <form id="form">
+        <form id="form"  novalidate>
           <label for="name" class="label">Cardholder Name</label>
           <input
             type="text"
@@ -42,6 +42,7 @@
             placeholder="  e.g. Jane Appleseed"
             id="name"
             class="input"
+            pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$"
           />
 
           <label for="number" class="label"> Card Number</label>
@@ -50,9 +51,12 @@
             name="card_number"
             placeholder=" e.g. 1234 5678 9123 0000"
             id="number"
+            minlength="16"
+            maxlength="16"
             class="input"
+         
           />
-
+     <!-- pattern="\d+$" -->
           <div id="form_date_cvc">
             <div>
               <label for="card_date" class="label">Exp. Date (MM/YY)</label
@@ -61,16 +65,26 @@
                 type="text"
                 name="card_date"
                 placeholder="MM"
-                id="date"
+                id="dateMM"
                 class="input"
+                minlength="1"
+                maxlength="2"
+             
               />
+   <!-- pattern="(0[1-9]|1[0-2])"  -->
+
               <input
                 type="text"
                 name="card_date"
                 placeholder="YY"
-                id="date"
+                id="dateYY"
                 class="input"
+                minlength="1"
+                maxlength="2"
+           
               />
+     <!-- pattern="([0-9]{2})"  -->
+
             </div>
 
             <div id="cvc">
@@ -81,6 +95,9 @@
                 placeholder=" e.g. 123"
                 id="card_cvc"
                 class="input"
+                minlength="3"
+                maxlength="3"
+                pattern="\d+$"
               />
             </div>
           </div>
@@ -89,6 +106,8 @@
         </form>
       </section>
     </main>
+    <script src="index.js"></script>
+    <!-- <script src="index2.js"></script> -->
   </body>
 </html>
 
@@ -96,3 +115,4 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div> -->
+<!--precisa ser ajustado-->

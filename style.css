@@ -72,10 +72,9 @@ main {
 
 #backSideOfCard {
   position: absolute;
-  right: 3rem;
+
   top: 20rem;
   left: 15rem;
-
 
   #backSideOfCard_img {
     width: 400px;
@@ -84,7 +83,7 @@ main {
 
   #backSideOfCard_cvc {
     position: absolute;
-    top:4.5rem;
+    top: 4.5rem;
     left: 20rem;
     color: aliceblue;
   }
@@ -111,7 +110,8 @@ main {
     margin-bottom: 0.8rem;
   }
 
-  #date {
+  #dateMM,
+  #dateYY {
     width: 6rem;
   }
 
@@ -136,4 +136,5 @@ main {
     font-size: 1rem;
     font-weight: bold;
   }
+  
 }
